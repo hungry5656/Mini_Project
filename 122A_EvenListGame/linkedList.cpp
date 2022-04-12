@@ -107,3 +107,7 @@ void linkedList::printList() const{
         currentNode = currentNode -> child_;
     }
 }
+
+bool linkedList::isEmpty() const{
+    return size_ == 0;
+}

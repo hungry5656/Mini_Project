@@ -32,6 +32,7 @@ class linkedList{
         int findLastVal() const;
         size_t size() const;
         void printList() const;
+        bool isEmpty() const;
 
     private:
         std::shared_ptr<linkedListNode> root;
