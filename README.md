@@ -5,4 +5,5 @@
 
 ## Content
 
-1. [122A_EvenListGame](122A_EvenListGame/README.MD)
+1. - [122A_EvenListGame Folder](122A_EvenListGame/)
+    - [122A_EvenListGame README](122A_EvenListGame/README.MD)
