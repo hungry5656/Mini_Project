@@ -48,6 +48,7 @@ void linkedList::insert(int val){
 }
 
 int linkedList::findfirstVal() const{
+    if (root == nullptr) return -1;
     return root -> value;
 }
 
@@ -69,16 +70,12 @@ void linkedList::deleteEnd(){
         return;
     }
     std::shared_ptr<linkedListNode> currentNode = root;
-    int i = 0;
     while (!currentNode -> isEnd()){
         currentNode = currentNode -> child_;
-        i++;
-        std::cout << i << std:: endl;
     }
     std::shared_ptr<linkedListNode> parent = currentNode -> parent_.lock();
     // parent -> replaceNode(currentNode, nullptr);
-
-    currentNode ->child_ = nullptr;
+    parent ->child_ = nullptr;
     --size_;
 }
 
