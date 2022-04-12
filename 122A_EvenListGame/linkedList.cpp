@@ -43,7 +43,7 @@ void linkedList::insert(int val){
     while (!currentNode -> isEnd()){
         currentNode = currentNode -> child_;
     }
-    currentNode -> child_ = std::make_shared<linkedListNode>(val);
+    currentNode -> child_ = std::make_shared<linkedListNode>(val, currentNode);
     ++size_;
 }
 
@@ -52,19 +52,33 @@ int linkedList::findfirstVal() const{
 }
 
 void linkedList::deleteFront(){
+    if (root -> child_ == nullptr){
+        root = nullptr;
+        --size_;
+        return;
+    }
     root = root -> child_;
     root -> parent_.reset();
     --size_;
 }
 
 void linkedList::deleteEnd(){
+    if (root -> child_ == nullptr){
+        root = nullptr;
+        --size_;
+        return;
+    }
     std::shared_ptr<linkedListNode> currentNode = root;
+    int i = 0;
     while (!currentNode -> isEnd()){
         currentNode = currentNode -> child_;
+        i++;
+        std::cout << i << std:: endl;
     }
     std::shared_ptr<linkedListNode> parent = currentNode -> parent_.lock();
     // parent -> replaceNode(currentNode, nullptr);
-    parent -> child_ = nullptr;
+
+    currentNode ->child_ = nullptr;
     --size_;
 }
 
@@ -83,7 +97,12 @@ size_t linkedList::size() const{
 
 void linkedList::printList() const{
     std::shared_ptr<linkedListNode> currentNode = root;
-    for (int i = 0; i < size_; ++i){
+    std::cout << "Size: " << size_ << std::endl;
+    if (size_ == 0){
+        std::cout << "Empty List" << std::endl;
+        return;
+    }
+    for (size_t i = 0; i < size_; ++i){
         std::cout << "Number " << i+1 << " Node: " << currentNode -> value << std::endl;
         currentNode = currentNode -> child_;
     }

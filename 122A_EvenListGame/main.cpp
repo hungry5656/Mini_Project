@@ -1,8 +1,12 @@
 #include "linkedList.h"
 
 int main(){
-    std::vector<int> Arraylist = {1, 2, 3, 4, 5, 6};
+    std::vector<int> Arraylist = {1, 2};
     linkedList Newlist(Arraylist);
+    Newlist.printList();
+    Newlist.deleteFront();
+    Newlist.printList();
+    Newlist.deleteEnd();
     Newlist.printList();
     return 0;
 }

@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 
+class linkedList;
 class linkedListNode{
     public:
         linkedListNode(int val);
@@ -12,11 +13,10 @@ class linkedListNode{
         bool isEnd();
 
     private:
+        int value;
         std::weak_ptr<linkedListNode> parent_;
         std::shared_ptr<linkedListNode> child_;
-        int value;
-    
-    friend linkedList;
+        friend linkedList;
 };
 
 class linkedList{
