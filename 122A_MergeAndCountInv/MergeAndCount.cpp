@@ -17,7 +17,7 @@ std::vector<int> MergeAndCount(std::vector<int> A, std::vector<int> B, int* NumI
             List.push_back(A[i]);
             ++i;
         } else {
-            if (A[i] < B[j]){
+            if (A[i] <= B[j]){
                 List.push_back(A[i]);
                 ++i;
             } else {
