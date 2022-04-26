@@ -9,10 +9,11 @@
 int main(){
     int vecSize = std::rand() % VEC_SIZE_;
     std::vector<int> TestVector;
+    std::cout << "---------Initialize Begin-----------" << std::endl;
     for (int i = 0; i < vecSize; ++i){
         TestVector.push_back(std::rand() % NUM_RANGE_);
         std::cout << TestVector[i] << std::endl;
     }
-    
+    std::cout << "---------Initialize End-------------" << std::endl;
     return 0;
 }
