@@ -21,6 +21,7 @@ int main(){
     for (int i = 0; i < int(TestVector.size()); ++i){
         std::cout << i << ": " << TestVector[i] << std::endl;
     }
+    std::cout << "Number of Inversion: " <<TestNum << std::endl;
     std::cout << "-------------Test End---------------" << std::endl;
     return 0;
 }

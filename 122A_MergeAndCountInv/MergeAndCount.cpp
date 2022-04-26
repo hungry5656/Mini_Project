@@ -24,6 +24,7 @@ std::vector<int> MergeAndCount(std::vector<int> A, std::vector<int> B, int* NumI
             } else {
                 List.push_back(B[j]);
                 ++j;
+                *NumInv = *NumInv + iMax - i;
             }
         }
     }
