@@ -20,5 +20,5 @@ std::vector<int> SortAndCount(std::vector<int> List, int* NumInv){
     A = SortAndCount(A, NumInv);
     B = SortAndCount(B, NumInv);
     List = MergeAndCount(A, B, NumInv);
-    
+    return List;
 }
