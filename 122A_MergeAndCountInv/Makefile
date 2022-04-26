@@ -2,18 +2,18 @@ CC = g++
 DEV = -Wall -Werror
 
 .PHONY: all
-all: MergeAndCount.o main
-
-main: main.cpp
-	$(CC) $(DEV) -o3 main.cpp -o main
+all: MergeAndCount.o main.out
 
 MergeAndCount.o: MergeAndCount.cpp MergeAndCount.h
 	$(CC) $(DEV) -c MergeAndCount.cpp
 
+main.out: main.cpp MergeAndCount.o
+	$(CC) $(DEV) -o3 main.cpp MergeAndCount.o -o main.out
+
 .PHONY: clean
 clean:
 	rm -f *.o
-	rm -f main
+	rm -f main.out
 
 .PHONY: update
 update:

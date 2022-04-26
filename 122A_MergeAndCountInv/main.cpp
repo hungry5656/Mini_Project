@@ -9,11 +9,18 @@
 int main(){
     int vecSize = std::rand() % VEC_SIZE_;
     std::vector<int> TestVector;
-    std::cout << "---------Initialize Begin-----------" << std::endl;
+    std::cout << "-----------Initialize Begin---------" << std::endl;
     for (int i = 0; i < vecSize; ++i){
         TestVector.push_back(std::rand() % NUM_RANGE_);
-        std::cout << TestVector[i] << std::endl;
+        std::cout << i << ": " << TestVector[i] << std::endl;
     }
-    std::cout << "---------Initialize End-------------" << std::endl;
+    std::cout << "-----------Initialize End-----------" << std::endl;
+    std::cout << "-------------Test Begin-------------" << std::endl;
+    int TestNum = 0;
+    TestVector = SortAndCount(TestVector, &TestNum);
+    for (int i = 0; i < int(TestVector.size()); ++i){
+        std::cout << i << ": " << TestVector[i] << std::endl;
+    }
+    std::cout << "-------------Test End---------------" << std::endl;
     return 0;
 }
