@@ -1,3 +1,6 @@
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
 #include <memory>
 #include <string>
 #include <vector>
@@ -38,3 +41,5 @@ class linkedList{
         std::shared_ptr<linkedListNode> root;
         size_t size_;
 };
+
+#endif

@@ -2,18 +2,18 @@ CC = g++
 DEV = -Wall -Werror
 
 .PHONY: all
-all: linkedList.o main
+all: linkedList.o main.out
 
 linkedList.o: linkedList.cpp linkedList.h
 	$(CC) $(DEV) -c linkedList.cpp
 
-main: main.cpp linkedList.o
-	$(CC) $(DEV) -o3 main.cpp linkedList.o -o main
+main.out: main.cpp linkedList.o
+	$(CC) $(DEV) -o3 main.cpp linkedList.o -o main.out
 
 .PHONY: clean
 clean:
 	rm -f *.o
-	rm -f main
+	rm -f main.out
 
 .PHONY: update
 update:
